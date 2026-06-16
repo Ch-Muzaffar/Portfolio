@@ -9,6 +9,11 @@
     <meta property="og:title" content="Muzaffar Rahman Portfolio">
     <meta property="og:description" content="Frontend Developer Portfolio">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ch-muzaffar.github.io/Portfolio/images/og_preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ch-muzaffar.github.io/Portfolio/images/og_preview.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="application/ld+json">
 {
@@ -64,14 +69,6 @@
             --glow2: rgba(109, 40, 217, 0.15);
         }
 
-        [data-theme="light"] body {
-            cursor: auto;
-        }
-
-        [data-theme="light"] #cursor,
-        [data-theme="light"] #cursor-ring {
-            display: none;
-        }
 
         [data-theme="light"] nav {
             background: rgba(240, 244, 255, 0.85);
@@ -149,18 +146,8 @@
             background: linear-gradient(90deg, #00ff41, #00cc33);
         }
 
-        [data-theme="matrix"] #cursor {
-            background: #00ff41;
-            box-shadow: 0 0 12px #00ff41, 0 0 24px #00ff41;
-        }
 
-        [data-theme="matrix"] #cursor-ring {
-            border-color: rgba(0, 255, 65, 0.5);
-        }
 
-        [data-theme="matrix"] .matrix-rain {
-            display: block !important;
-        }
 
         [data-theme="matrix"] #particle-canvas {
             opacity: 0.3;
@@ -175,50 +162,20 @@
             color: var(--text);
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
-            cursor: none;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='rgba(0,229,255,0.25)' stroke='%2300e5ff' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%2300e5ff'/%3E%3C/svg%3E") 10 10, auto;
             transition: background 0.4s ease, color 0.4s ease;
         }
 
-        /* ─── CUSTOM CURSOR ─── */
-        #cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.08s ease, background 0.2s;
-            mix-blend-mode: screen;
-            box-shadow: 0 0 12px var(--accent), 0 0 24px var(--accent);
-        }
-
-        #cursor-ring {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9998;
-            width: 36px;
-            height: 36px;
-            border: 1.5px solid rgba(0, 229, 255, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.18s ease, width 0.2s, height 0.2s, border-color 0.2s;
-        }
-
-        .cursor-hover #cursor {
-            transform: translate(-50%, -50%) scale(2.5);
-            background: var(--accent2);
-        }
-
-        .cursor-hover #cursor-ring {
-            width: 54px;
-            height: 54px;
-            border-color: rgba(124, 58, 237, 0.6);
+        /* ─── INTERACTIVE CURSOR ─── */
+        a,
+        button,
+        .exp-card,
+        .project-card,
+        .stat-card,
+        .btn,
+        .theme-btn,
+        .exp-btn {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='9' fill='rgba(124,58,237,0.22)' stroke='%237c3aed' stroke-width='1.5'/%3E%3Ccircle cx='11' cy='11' r='3' fill='%237c3aed'/%3E%3C/svg%3E") 11 11, pointer;
         }
 
         /* ─── LOADING SCREEN ─── */
@@ -369,13 +326,6 @@
             color: var(--accent);
         }
 
-        /* ─── NAV RIGHT CONTROLS ─── */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
         /* ─── VISITOR COUNTER ─── */
         .visitor-counter {
             display: flex;
@@ -468,7 +418,7 @@
             border-radius: 99px;
             border: none;
             background: transparent;
-            cursor: none;
+            cursor: pointer;
             font-size: 0.95rem;
             color: var(--muted);
             transition: background 0.2s, color 0.2s, transform 0.2s;
@@ -590,7 +540,7 @@
             font-family: 'DM Mono', monospace;
             font-size: 0.85rem;
             letter-spacing: 0.06em;
-            cursor: none;
+            cursor: pointer;
             transition: all 0.25s ease;
             text-decoration: none;
             display: inline-block;
@@ -1009,6 +959,7 @@
             padding: 32px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.4s;
         }
 
@@ -1092,9 +1043,6 @@
             opacity: 1;
         }
 
-        .project-card {
-            cursor: pointer;
-        }
 
         /* ─── CERTIFICATES ─── */
         #certificates {
@@ -1206,6 +1154,10 @@
             letter-spacing: 0.06em;
             opacity: 0.7;
             transition: opacity 0.2s;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
         }
 
         .cert-link:hover {
@@ -1259,7 +1211,6 @@
             transition: transform 0.35s, border-color 0.3s, box-shadow 0.35s, background 0.4s;
             position: relative;
             cursor: pointer;
-            group: true;
         }
 
         .design-card:hover {
@@ -1529,6 +1480,254 @@
             }
         }
 
+        /* ─── EXPERIENCE CREDENTIALS ─── */
+        #experience {
+            background: transparent;
+        }
+
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 16px;
+        }
+
+        .exp-card {
+            background: linear-gradient(145deg, var(--surface) 0%, var(--surface2) 100%);
+            border: 1px solid rgba(0, 229, 255, 0.12);
+            border-radius: 18px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.04) 0%, rgba(124, 58, 237, 0.04) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 18px;
+        }
+
+        .exp-card:hover::before {
+            opacity: 1;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 229, 255, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.08);
+        }
+
+        .exp-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exp-card-icon.offer {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(0, 229, 255, 0.05));
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+        }
+
+        .exp-card-icon.experience {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+        }
+
+
+
+        .exp-card-type {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exp-card-type.offer {
+            color: var(--accent);
+        }
+
+        .exp-card-type.experience {
+            color: var(--accent2);
+        }
+
+
+        .exp-card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exp-card-org {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exp-card-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            border: none;
+            font-weight: 500;
+        }
+
+        .exp-btn-view {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+        }
+
+        .exp-btn-view:hover {
+            background: rgba(0, 229, 255, 0.18);
+            border-color: var(--accent);
+            box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+
+
+        .exp-card-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(34, 197, 94, 0.12);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 99px;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            padding: 3px 10px;
+            text-transform: uppercase;
+        }
+
+        /* ─── EXPERIENCE MODAL ─── */
+        .exp-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+
+        .exp-modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .exp-modal-box {
+            background: var(--surface);
+            border: 1px solid rgba(0, 229, 255, 0.18);
+            border-radius: 18px;
+            width: min(90vw, 860px);
+            height: min(88vh, 700px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 229, 255, 0.06);
+            transform: scale(0.92);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .exp-modal-overlay.open .exp-modal-box {
+            transform: scale(1);
+        }
+
+        .exp-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            flex-shrink: 0;
+        }
+
+        .exp-modal-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .exp-modal-close {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: var(--muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .exp-modal-close:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .exp-modal-body {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .exp-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* ─── MOBILE ─── */
         @media (max-width: 768px) {
             .hero-inner {
@@ -1600,13 +1799,9 @@
 
 <body>
 
-    <!-- Custom Cursor -->
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
-
     <!-- Loading Screen -->
     <div id="loader">
-        <div class="loader-text">Muhammad Muzaffar Rahman</div>
+        <div class="loader-text">Ch. Muzaffar Rahman</div>
         <div class="loader-bar-wrap">
             <div class="loader-bar"></div>
         </div>
@@ -1620,44 +1815,38 @@
 
     <!-- Nav -->
     <nav>
-        <div class="nav-logo">Muzaffar Rahman /&gt;</div>
+        <div class="nav-logo">MR/&gt;</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certificates">Certificates</a></li>
             <li><a href="#designs">Designs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- ─── NEW: RIGHT CONTROLS ─── -->
-        <div class="nav-right">
-            <!-- Visitor Counter -->
-            <div class="visitor-counter" title="Real-time visitors">
-                <span class="visitor-dot"></span>
-                <span class="visitor-num" id="visitorNum">—</span>
-                <span>online</span>
-            </div>
 
-            <!-- Theme Switcher -->
-            <div class="theme-switcher" role="group" aria-label="Theme switcher">
-                <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')" title="Dark theme"
-                    aria-label="Dark theme">
-                    🌙
-                    <span class="theme-label">Dark</span>
-                </button>
-                <button class="theme-btn" id="btn-light" onclick="setTheme('light')" title="Light theme"
-                    aria-label="Light theme">
-                    ☀️
-                    <span class="theme-label">Light</span>
-                </button>
-                <button class="theme-btn" id="btn-matrix" onclick="setTheme('matrix')" title="Matrix theme"
-                    aria-label="Matrix theme">
-                    ⌨️
-                    <span class="theme-label">Matrix</span>
-                </button>
-            </div>
+
+        <!-- Theme Switcher -->
+        <div class="theme-switcher" role="group" aria-label="Theme switcher">
+            <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')" title="Dark theme"
+                aria-label="Dark theme">
+                🌙
+                <span class="theme-label">Dark</span>
+            </button>
+            <button class="theme-btn" id="btn-light" onclick="setTheme('light')" title="Light theme"
+                aria-label="Light theme">
+                ☀️
+                <span class="theme-label">Light</span>
+            </button>
+            <button class="theme-btn" id="btn-matrix" onclick="setTheme('matrix')" title="Matrix theme"
+                aria-label="Matrix theme">
+                ⌨️
+                <span class="theme-label">Matrix</span>
+            </button>
+        </div>
         </div>
     </nav>
 
@@ -1668,14 +1857,14 @@
                 <div class="hero-inner">
                     <div class="hero-content">
                         <div class="hero-tag">[ IT Student · UI Designer · Developer ]</div>
-                        <h1 class="hero-name">Muhammad<br>Muzaffar<br>Rahman</h1>
-                        <p class="hero-sub">Focused IT student at GCU Lahore. I build with the MERN stack, design in
-                            Figma, and push
-                            everything through GitHub Actions and CI/CD Pipelines. I have also done internship from
-                            Department of
-                            Agriculture, Lahore. Currently I am looking for challenging internship opportunity where I
-                            can utilize my
-                            skills and grow.</p>
+                        <h3 class="hero-name">Muhammad<br>Muzaffar<br>Rahman</h3>
+                        <p class="hero-sub">I am passionate Full Stack Developer
+                            specializing in the MERN stack, React Native, SQL databases, and responsive UI/UX
+                            design.I push my Projects through GitHub Actions, CI/CD Pipelines & also done
+                            internship from Department of Agriculture, Lahore.
+                            Currently moving forward as an Incoming Front End Engineering Intern at FlyRank AI and
+                            at Codealpha.
+                        </p>
                         <div class="hero-btns">
                             <a href="#projects" class="btn btn-primary">View Projects</a>
                             <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -1691,7 +1880,7 @@
                                 <div class="ripple-ring"></div>
                                 MR
                             </div>
-                            <div class="avatar-name">Muhammad Muzaffar</div>
+                            <div class="avatar-name">Muzaffar Rahman</div>
                             <div class="avatar-role">IT · MERN · Figma</div>
                         </div>
                     </div>
@@ -1709,17 +1898,14 @@
                 <div class="about-grid">
                     <div class="reveal reveal-left">
                         <div class="about-text">
-                            <p>I'm a second-year BS Information Technology student at Government College University,
-                                Lahore.
-                                Comfortable with both visual and technical work — I design in Figma and Canva, write
-                                front-end code in
-                                HTML, CSS, and JavaScript, and understand how the MERN and MEAN stacks are structured.
+                            <p>I am a results-driven Web and App developer dedicated to crafting seamless,
+                                performance-optimized applications from front to back. My journey into tech evolved from
+                                a curiosity about software architecture into a deep dive into building production-ready
+                                apps using modern frameworks like React Native, Node.js, and SQL/NoSQL databases.</p>
+                            <p>I thrive on bridging the gap between clean UI design and powerful backend architecture,
+                                whether I am building educational tools, scaling services through my agency, or
+                                deploying features in an engineering team.
                             </p>
-                            <p>I'm actively working toward a software development internship where I can contribute to
-                                real products
-                                and sharpen my engineering skills. I also run side projects spanning AR menus, AI
-                                assistants, and
-                                eCommerce platforms.</p>
                             <p>Languages I communicate in: English, Urdu, and Punjabi.</p>
                         </div>
                     </div>
@@ -1730,7 +1916,7 @@
                         </div>
                         <div class="stat-card">
                             <span class="stat-num">2026</span>
-                            <span class="stat-label">Internship Target</span>
+                            <span class="stat-label">Job Target</span>
                         </div>
                         <div class="stat-card">
                             <span class="stat-num">3</span>
@@ -1741,6 +1927,64 @@
                             <span class="stat-label">University, Lahore</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY EXPERIENCE -->
+        <section id="experience">
+            <div class="container">
+                <div class="reveal reveal-up">
+                    <div class="section-label">Credentials</div>
+                    <h2 class="section-title">My <span>Experience</span></h2>
+                </div>
+                <div class="exp-grid">
+
+                    <!-- Offer Letter: FlyRank AI -->
+                    <div class="exp-card reveal reveal-up" style="animation-delay:0.05s">
+                        <span class="exp-card-badge">Verified</span>
+                        <div class="exp-card-icon offer">📨</div>
+                        <div class="exp-card-type offer">Offer Letter</div>
+                        <div class="exp-card-title">Front End Engineering Intern</div>
+                        <div class="exp-card-org">FlyRank AI — 2025</div>
+                        <div class="exp-card-actions">
+                            <button class="exp-btn exp-btn-view" id="view-flyrank"
+                                onclick="openExpModal('FlyRank AI — Offer Letter','Documents/FlyRankAI Internship Offer Letter.pdf')">
+                                👁 View Letter
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Offer Letter: CodeAlpha -->
+                    <div class="exp-card reveal reveal-up" style="animation-delay:0.1s">
+                        <span class="exp-card-badge">Verified</span>
+                        <div class="exp-card-icon offer">📨</div>
+                        <div class="exp-card-type offer">Offer Letter</div>
+                        <div class="exp-card-title">Software Development Intern</div>
+                        <div class="exp-card-org">CodeAlpha — 2025</div>
+                        <div class="exp-card-actions">
+                            <button class="exp-btn exp-btn-view" id="view-codealpha"
+                                onclick="openExpModal('CodeAlpha — Offer Letter','Documents/Offer_Letter_CodeAlpha.pdf')">
+                                👁 View Letter
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Experience Letter: Dept. of Agriculture -->
+                    <div class="exp-card reveal reveal-up" style="animation-delay:0.15s">
+                        <span class="exp-card-badge">Completed</span>
+                        <div class="exp-card-icon experience">🏛</div>
+                        <div class="exp-card-type experience">Experience Letter</div>
+                        <div class="exp-card-title">IT Intern</div>
+                        <div class="exp-card-org">Dept. of Agriculture, Lahore — 2024</div>
+                        <div class="exp-card-actions">
+                            <button class="exp-btn exp-btn-view" id="view-agri"
+                                onclick="openExpModal('Dept. of Agriculture — Experience Letter','Documents/Agri-Intern.pdf')">
+                                👁 View Letter
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -1902,12 +2146,9 @@
                         onclick="window.open('https://todo-list-nu-pied.vercel.app/','_blank')">
                         <div class="project-icon">📝</div>
                         <div class="project-title">Full-Stack Todo App</div>
-                        <div class="project-desc">Built a full-stack todo application with a React frontend and Node.js
-                            backend.
-                            Used Neon (serverless PostgreSQL) for the database, deployed on Vercel, and managed source
-                            control through
-                            GitHub. Covers full CRUD operations with a cloud-hosted database and production deployment.
-                        </div>
+                        <div class="project-desc">A robust Full-Stack Todo application built with Next.js, React, and
+                            CSS. Utilizes Neon PostgreSQL for relational database management.A friendly UI and UX with
+                            easy to use interface. A fully responsive design for all devices. </div>
                         <div class="project-tags">
                             <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Neon
                                 DataBase</span><span class="tag">Vercel</span><span class="tag">GitHub</span>
@@ -2059,19 +2300,8 @@
                         <div class="cert-date">May 2026</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <a href="Documents/Resume.pdf" target="_blank" class="cert-link">View →</a>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 2 — Internship -->
-                    <div class="cert-card reveal reveal-up" style="transition-delay:0.1s">
-                        <div class="cert-badge">🎖️</div>
-                        <div class="cert-title">Internship Certificate</div>
-                        <div class="cert-issuer">Department of Agriculture, Lahore</div>
-                        <div class="cert-date">May 2026</div>
-                        <div class="cert-footer">
-                            <span class="cert-status">✓ Verified</span>
-                            <a href="Documents/Agri-Intern.pdf" target="_blank" class="cert-link">View →</a>
+                            <button class="cert-link" onclick="openExpModal('My Resume','Documents/Resume.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
@@ -2083,19 +2313,51 @@
                         <div class="cert-date">December 2025</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <a href="Documents/AI.pdf" target="_blank" class="cert-link">View →</a>
+                            <button class="cert-link"
+                                onclick="openExpModal('Generative AI — Aspire Nation','Documents/AI.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
                     <!-- Certificate 4 — Data Analytics -->
                     <div class="cert-card reveal reveal-up" style="transition-delay:0.3s">
                         <div class="cert-badge">📊</div>
-                        <div class="cert-title">Data Analytics Certificate</div>
+                        <div class="cert-title">Data Analytics Job Simulation</div>
                         <div class="cert-issuer">Deloitte</div>
                         <div class="cert-date">June 2026</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <a href="Documents/DA-A.pdf" target="_blank" class="cert-link">View →</a>
+                            <button class="cert-link"
+                                onclick="openExpModal('Data Analytics Job Simulation — Deloitte','Documents/DA-A.pdf')">View
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 5 — GenAi Job Simulation -->
+                    <div class="cert-card reveal reveal-up" style="transition-delay:0.3s">
+                        <div class="cert-badge">🤖</div>
+                        <div class="cert-title">GenAI Job Simulation</div>
+                        <div class="cert-issuer">BCG X</div>
+                        <div class="cert-date">June 2026</div>
+                        <div class="cert-footer">
+                            <span class="cert-status">✓ Verified</span>
+                            <button class="cert-link"
+                                onclick="openExpModal('GenAI Job Simulation — BCG X','Documents/GENAI.pdf')">View
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 5 — Data Analytics by Tata -->
+                    <div class="cert-card reveal reveal-up" style="transition-delay:0.3s">
+                        <div class="cert-badge">📊</div>
+                        <div class="cert-title">AI Powered Data Analytics Job Simulation</div>
+                        <div class="cert-issuer">Tata Strive</div>
+                        <div class="cert-date">June 2026</div>
+                        <div class="cert-footer">
+                            <span class="cert-status">✓ Verified</span>
+                            <button class="cert-link"
+                                onclick="openExpModal('AI Powered Data Analytics — Tata Strive','Documents/TATA-DA-A.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
@@ -2123,22 +2385,18 @@
                     <!-- Design 1 — replace src with your actual image URL -->
                     <div class="design-card reveal reveal-up">
                         <div class="design-thumb">
-                            <!-- To use: replace the emoji block below with: <img src="YOUR_IMAGE_URL" alt="Design Name"> -->
-                            <div class="design-thumb-inner">
-                                🎨
-                                <span class="design-thumb-label">Click to View</span>
-                            </div>
+                            <img src="images/design_bestaxca.png" alt="UI Design for Bestaxca.com" loading="lazy">
                             <div class="design-overlay">
                                 <a href="https://skate-buck-74173844.figma.site/" target="_blank"
-                                    class="design-overlay-btn">⬡ View
+                                    class="design-overlay-btn">&#x2B21; View
                                     Project</a>
                             </div>
                         </div>
                         <div class="design-info">
                             <div class="design-title">UI Design for Bestaxca.com </div>
-                            <div class="design-desc">Applied for job in Bestaxca.com as Figma Designer .They provided a
-                                sample data to
-                                design a user interface to test my UI skills.</div>
+                            <div class="design-desc">Designed a comprehensive Figma layout for Bestaxca.com, a
+                                professional tax consulting company. Focused on clean typography, intuitive user flows,
+                                and a highly trustworthy aesthetic suited for financial services.</div>
                             <div class="design-tags">
                                 <span class="tag">Figma</span><span class="tag">Web Design</span><span class="tag">UI
                                     Design</span><span class="tag">Premiuim</span>
@@ -2149,13 +2407,10 @@
                     <!-- Design 2 -->
                     <div class="design-card reveal reveal-up" style="transition-delay:0.1s">
                         <div class="design-thumb">
-                            <div class="design-thumb-inner">
-                                🎨
-                                <span class="design-thumb-label">Click to View</span>
-                            </div>
+                            <img src="images/design_traffic.png" alt="UI Design for Traffic Mobile App" loading="lazy">
                             <div class="design-overlay">
                                 <a href="https://www.figma.com/design/TwZM1aG8F5vWoclw7O2WWD/Traffic-App-Designs?node-id=0-1&t=8r2mT82z6Gww2oDM-1"
-                                    target="_blank" class="design-overlay-btn">⬡ View Project</a>
+                                    target="_blank" class="design-overlay-btn">&#x2B21; View Project</a>
                             </div>
                         </div>
                         <div class="design-info">
@@ -2173,13 +2428,10 @@
                     <!-- Design 3 -->
                     <div class="design-card reveal reveal-up" style="transition-delay:0.2s">
                         <div class="design-thumb">
-                            <div class="design-thumb-inner">
-                                🎨
-                                <span class="design-thumb-label">Click to View</span>
-                            </div>
+                            <img src="images/design_armani.png" alt="Armani Landing Page Redesign" loading="lazy">
                             <div class="design-overlay">
                                 <a href="https://www.figma.com/proto/2POLRCNkxgFB93x71QqoJo/Armani?node-id=0-1&t=cujwSZBbsMWRF5BV-1"
-                                    target="_blank" class="design-overlay-btn">⬡ View Project</a>
+                                    target="_blank" class="design-overlay-btn">&#x2B21; View Project</a>
                             </div>
                         </div>
                         <div class="design-info">
@@ -2197,13 +2449,10 @@
                     <!-- Design 4 -->
                     <div class="design-card reveal reveal-up" style="transition-delay:0.2s">
                         <div class="design-thumb">
-                            <div class="design-thumb-inner">
-                                🎨
-                                <span class="design-thumb-label">Click to View</span>
-                            </div>
+                            <img src="images/design_gcu.png" alt="GCU Lahore Website Redesign" loading="lazy">
                             <div class="design-overlay">
                                 <a href="https://tested-binary-62984134.figma.site/" target="_blank"
-                                    class="design-overlay-btn">⬡ View
+                                    class="design-overlay-btn">&#x2B21; View
                                     Project</a>
                             </div>
                         </div>
@@ -2267,7 +2516,7 @@
     </main>
 
     <footer>
-        &copy; 2025 Muhammad Muzaffar Rahman — Built with HTML, CSS & JS
+        &copy; 2025 Muhammad Muzaffar Rahman - All rights reserved.
     </footer>
 
     <script>
@@ -2278,25 +2527,7 @@
             }, 1800);
         });
 
-        // ─── CURSOR ───
-        const cursor = document.getElementById('cursor');
-        const ring = document.getElementById('cursor-ring');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-        function animateCursor() {
-            cursor.style.left = mx + 'px';
-            cursor.style.top = my + 'px';
-            rx += (mx - rx) * 0.14;
-            ry += (my - ry) * 0.14;
-            ring.style.left = rx + 'px';
-            ring.style.top = ry + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-        document.querySelectorAll('a, button, .project-card, .stat-card, .btn').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
+
 
         // ─── PARTICLE NETWORK ───
         const canvas = document.getElementById('particle-canvas');
@@ -2556,7 +2787,42 @@
                 startMatrixRain();
             }
         });
+        // ─── EXPERIENCE MODAL ───
+        function openExpModal(title, pdfPath) {
+            document.getElementById('expModalTitle').textContent = title;
+            document.getElementById('expModalFrame').src = pdfPath;
+            document.getElementById('expModalFallback').href = pdfPath;
+            document.getElementById('expModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeExpModal() {
+            document.getElementById('expModal').classList.remove('open');
+            document.getElementById('expModalFrame').src = '';
+            document.body.style.overflow = '';
+        }
+        function handleExpModalClick(e) {
+            if (e.target === document.getElementById('expModal')) closeExpModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeExpModal(); });
     </script>
+    <!-- Experience Modal -->
+    <div class="exp-modal-overlay" id="expModal" onclick="handleExpModalClick(event)">
+        <div class="exp-modal-box">
+            <div class="exp-modal-header">
+                <div class="exp-modal-title" id="expModalTitle">Document</div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <a id="expModalFallback" href="" target="_blank"
+                        style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);opacity:0.7;text-decoration:none;letter-spacing:0.06em;transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Open in new tab
+                        &#x2197;</a>
+                    <button class="exp-modal-close" onclick="closeExpModal()" aria-label="Close">&#x2715;</button>
+                </div>
+            </div>
+            <div class="exp-modal-body">
+                <iframe id="expModalFrame" src="" title="Document Viewer"></iframe>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
