@@ -20,7 +20,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Muzaffar Rahman",
-  "jobTitle": "Full-Stack Developer",
+  "jobTitle": "Frontend Developer",
   "url": "https://ch-muzaffar.github.io/Portfolio/",
   "sameAs": [
     "https://github.com/ch-muzaffar"
@@ -1687,6 +1687,7 @@
             padding: 18px 24px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             flex-shrink: 0;
+            gap: 12px;
         }
 
         .exp-modal-title {
@@ -1694,6 +1695,11 @@
             font-size: 0.95rem;
             font-weight: 700;
             color: var(--text);
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .exp-modal-close {
@@ -1709,6 +1715,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
+            flex-shrink: 0;
         }
 
         .exp-modal-close:hover {
@@ -1720,12 +1727,106 @@
         .exp-modal-body {
             flex: 1;
             overflow: hidden;
+            position: relative;
         }
 
         .exp-modal-body iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
+        }
+
+        /* ─── MOBILE DOCUMENT FALLBACK ─── */
+        .exp-modal-mobile-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 28px;
+            text-align: center;
+            height: 100%;
+            background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+        }
+
+        .exp-modal-mobile-fallback .fallback-icon {
+            font-size: 3.5rem;
+            line-height: 1;
+            animation: floatDoc 3s ease-in-out infinite;
+        }
+
+        @keyframes floatDoc {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        .exp-modal-mobile-fallback .fallback-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .exp-modal-mobile-fallback .fallback-desc {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .exp-modal-mobile-fallback .fallback-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #060810;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 24px rgba(0, 229, 255, 0.35);
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+
+        .exp-modal-mobile-fallback .fallback-btn:hover,
+        .exp-modal-mobile-fallback .fallback-btn:active {
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.55);
+            transform: translateY(-2px);
+        }
+
+        .exp-modal-mobile-fallback .fallback-note {
+            font-size: 0.7rem;
+            color: var(--muted);
+            opacity: 0.7;
+        }
+
+        /* On mobile: make modal taller, show fallback, hide iframe */
+        @media (max-width: 768px) {
+            .exp-modal-box {
+                width: 94vw;
+                height: auto;
+                max-height: 80dvh;
+                border-radius: 14px;
+            }
+
+            .exp-modal-body {
+                min-height: 320px;
+            }
+
+            .exp-modal-header {
+                padding: 14px 16px;
+            }
+
+            .exp-modal-title {
+                font-size: 0.85rem;
+            }
         }
 
         /* ─── MOBILE ─── */
@@ -2788,13 +2889,39 @@
             }
         });
         // ─── EXPERIENCE MODAL ───
+        // Detect mobile / tablet devices that cannot render PDFs in iframes
+        function isMobileDevice() {
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)
+                || (navigator.maxTouchPoints > 1 && window.innerWidth < 1024);
+        }
+
         function openExpModal(title, pdfPath) {
             document.getElementById('expModalTitle').textContent = title;
-            document.getElementById('expModalFrame').src = pdfPath;
             document.getElementById('expModalFallback').href = pdfPath;
+
+            const frame    = document.getElementById('expModalFrame');
+            const fallback = document.getElementById('expModalMobileFallback');
+            const openBtn  = document.getElementById('expModalMobileBtn');
+
+            if (isMobileDevice()) {
+                // Hide iframe, show friendly fallback panel
+                frame.src = '';
+                frame.style.display = 'none';
+                fallback.style.display = 'flex';
+                openBtn.href = pdfPath;
+                // Update fallback title text
+                document.getElementById('expModalMobileDocName').textContent = title;
+            } else {
+                // Desktop: use iframe
+                frame.style.display = 'block';
+                fallback.style.display = 'none';
+                frame.src = pdfPath;
+            }
+
             document.getElementById('expModal').classList.add('open');
             document.body.style.overflow = 'hidden';
         }
+
         function closeExpModal() {
             document.getElementById('expModal').classList.remove('open');
             document.getElementById('expModalFrame').src = '';
@@ -2810,16 +2937,27 @@
         <div class="exp-modal-box">
             <div class="exp-modal-header">
                 <div class="exp-modal-title" id="expModalTitle">Document</div>
-                <div style="display:flex;align-items:center;gap:12px;">
+                <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
                     <a id="expModalFallback" href="" target="_blank"
-                        style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);opacity:0.7;text-decoration:none;letter-spacing:0.06em;transition:opacity 0.2s;"
-                        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Open in new tab
-                        &#x2197;</a>
+                        style="font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);opacity:0.7;text-decoration:none;letter-spacing:0.06em;transition:opacity 0.2s;white-space:nowrap;"
+                        onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">Open &#x2197;</a>
                     <button class="exp-modal-close" onclick="closeExpModal()" aria-label="Close">&#x2715;</button>
                 </div>
             </div>
             <div class="exp-modal-body">
+                <!-- Desktop: iframe PDF viewer -->
                 <iframe id="expModalFrame" src="" title="Document Viewer"></iframe>
+
+                <!-- Mobile: fallback panel (shown instead of iframe on phones/tablets) -->
+                <div class="exp-modal-mobile-fallback" id="expModalMobileFallback">
+                    <div class="fallback-icon">📄</div>
+                    <div class="fallback-title" id="expModalMobileDocName">Document</div>
+                    <div class="fallback-desc">PDF preview is not supported on mobile browsers.<br>Tap the button below to open it directly.</div>
+                    <a class="fallback-btn" id="expModalMobileBtn" href="" target="_blank" rel="noopener">
+                        &#x2197;&nbsp; Open Document
+                    </a>
+                    <div class="fallback-note">Opens in your device's PDF viewer or browser</div>
+                </div>
             </div>
         </div>
     </div>
