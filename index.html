@@ -33,6 +33,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* ─── RESET & BASE ─── */
         *,
@@ -81,7 +82,7 @@
             --border-hover: rgba(59, 91, 219, 0.45);
             --glow: rgba(59, 91, 219, 0.18);
             --glow2: rgba(112, 72, 232, 0.15);
-            --shadow-card: 0 4px 24px -4px rgba(59, 91, 219, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+            --shadow-card: 0 4px 24px -4px rgba(59, 91, 219, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
         }
 
         /* ─── LIGHT THEME SPECIFIC OVERRIDES ─── */
@@ -98,19 +99,64 @@
         [data-theme="light"] nav {
             background: rgba(255, 255, 255, 0.82);
             border-color: rgba(59, 91, 219, 0.14);
-            box-shadow: 0 4px 24px rgba(59, 91, 219, 0.08), 0 1px 2px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 24px rgba(59, 91, 219, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
         /* Section alternation */
-        [data-theme="light"] #hero { background: transparent; }
-        [data-theme="light"] #about { background: transparent; }
-        [data-theme="light"] #experience { background: #f8f9ff; border-color: rgba(59,91,219,0.1); }
-        [data-theme="light"] #skills { background: #ffffff; border-color: rgba(59,91,219,0.1); }
-        [data-theme="light"] #education { background: #f8f9ff; }
-        [data-theme="light"] #projects { background: #ffffff; border-color: rgba(59,91,219,0.1); }
-        [data-theme="light"] #certificates { background: #f8f9ff; }
-        [data-theme="light"] #designs { background: #ffffff; border-color: rgba(59,91,219,0.1); }
-        [data-theme="light"] #contact { background: transparent; }
+        [data-theme="light"] #hero {
+            background: transparent;
+        }
+
+        [data-theme="light"] #about {
+            background: transparent;
+        }
+
+        [data-theme="light"] #services {
+            background: #ffffff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #experience {
+            background: #f8f9ff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #skills {
+            background: #ffffff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #education {
+            background: #f8f9ff;
+        }
+
+        [data-theme="light"] #projects {
+            background: #ffffff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #how-i-work {
+            background: #ffffff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #other-work {
+            background: #f8f9ff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #certificates {
+            background: #f8f9ff;
+        }
+
+        [data-theme="light"] #designs {
+            background: #ffffff;
+            border-color: rgba(59, 91, 219, 0.1);
+        }
+
+        [data-theme="light"] #contact {
+            background: transparent;
+        }
 
         /* Buttons light */
         [data-theme="light"] .btn-primary {
@@ -118,14 +164,17 @@
             color: #ffffff;
             box-shadow: 0 8px 24px rgba(59, 91, 219, 0.3);
         }
+
         [data-theme="light"] .btn-primary:hover {
             box-shadow: 0 12px 32px rgba(112, 72, 232, 0.4);
             color: #ffffff;
         }
+
         [data-theme="light"] .btn-ghost {
             border-color: rgba(59, 91, 219, 0.3);
             color: #3b5bdb;
         }
+
         [data-theme="light"] .btn-ghost:hover {
             background: rgba(59, 91, 219, 0.06);
             border-color: #3b5bdb;
@@ -136,28 +185,33 @@
         [data-theme="light"] .exp-card {
             background: #ffffff;
             border-color: rgba(59, 91, 219, 0.12);
-            box-shadow: 0 2px 12px rgba(59, 91, 219, 0.07), 0 1px 3px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 12px rgba(59, 91, 219, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
         }
+
         [data-theme="light"] .project-card:hover,
         [data-theme="light"] .exp-card:hover {
             border-color: #3b5bdb;
-            box-shadow: 0 12px 32px rgba(59, 91, 219, 0.15), 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 32px rgba(59, 91, 219, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
         }
+
         [data-theme="light"] .cert-card {
             background: #ffffff;
             border-color: rgba(59, 91, 219, 0.1);
             box-shadow: 0 2px 12px rgba(59, 91, 219, 0.06);
         }
+
         [data-theme="light"] .cert-card:hover {
             border-color: #3b5bdb;
             box-shadow: 0 10px 28px rgba(59, 91, 219, 0.14);
             background: #f8f9ff;
         }
+
         [data-theme="light"] .design-card {
             background: #ffffff;
             border-color: rgba(59, 91, 219, 0.1);
             box-shadow: 0 2px 12px rgba(59, 91, 219, 0.06);
         }
+
         [data-theme="light"] .design-card:hover {
             border-color: #3b5bdb;
             box-shadow: 0 14px 36px rgba(59, 91, 219, 0.14);
@@ -169,9 +223,11 @@
             border-color: rgba(59, 91, 219, 0.14);
             box-shadow: 0 2px 10px rgba(59, 91, 219, 0.07);
         }
+
         [data-theme="light"] .stat-card:hover {
             box-shadow: 0 8px 24px rgba(59, 91, 219, 0.14);
         }
+
         [data-theme="light"] .stat-num {
             background: linear-gradient(135deg, #3b5bdb, #7048e8);
             -webkit-background-clip: text;
@@ -189,6 +245,7 @@
         [data-theme="light"] .skill-bar-bg {
             background: #e5e9f8;
         }
+
         [data-theme="light"] .skill-bar-fill {
             background: linear-gradient(90deg, #3b5bdb, #7048e8);
             box-shadow: 0 0 8px rgba(59, 91, 219, 0.35);
@@ -198,9 +255,11 @@
         [data-theme="light"] .marquee-wrap {
             border-color: rgba(59, 91, 219, 0.12);
         }
+
         [data-theme="light"] .marquee-wrap::before {
             background: linear-gradient(to right, #f0f4ff, transparent);
         }
+
         [data-theme="light"] .marquee-wrap::after {
             background: linear-gradient(to left, #f0f4ff, transparent);
         }
@@ -209,6 +268,7 @@
         [data-theme="light"] .timeline::before {
             background: linear-gradient(to bottom, #3b5bdb, #7048e8, transparent);
         }
+
         [data-theme="light"] .timeline-dot {
             background: #3b5bdb;
             box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.2);
@@ -219,6 +279,7 @@
         [data-theme="light"] .section-label {
             color: #3b5bdb;
         }
+
         [data-theme="light"] .section-label::after {
             background: #3b5bdb;
         }
@@ -227,13 +288,14 @@
         [data-theme="light"] .avatar-card {
             background: linear-gradient(135deg, #ffffff 0%, #e8eeff 100%);
             border-color: rgba(59, 91, 219, 0.2);
-            box-shadow: 0 20px 60px rgba(59, 91, 219, 0.12), 0 4px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 20px 60px rgba(59, 91, 219, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
         }
 
         /* Hero tag light */
         [data-theme="light"] .hero-tag {
             color: #3b5bdb;
         }
+
         [data-theme="light"] .hero-tag::before {
             background: #3b5bdb;
         }
@@ -242,9 +304,11 @@
         [data-theme="light"] .contact-ripple {
             border-color: rgba(59, 91, 219, 0.12);
         }
+
         [data-theme="light"] .contact-link {
             border-color: rgba(59, 91, 219, 0.2);
         }
+
         [data-theme="light"] .contact-link:hover {
             background: rgba(59, 91, 219, 0.05);
         }
@@ -255,6 +319,7 @@
             border-color: rgba(59, 91, 219, 0.2);
             color: #3b5bdb;
         }
+
         [data-theme="light"] .exp-btn:hover {
             background: #3b5bdb;
             color: #ffffff;
@@ -271,10 +336,12 @@
             background: rgba(59, 91, 219, 0.06);
             border-color: rgba(59, 91, 219, 0.15);
         }
+
         [data-theme="light"] .visitor-counter:hover {
             background: rgba(59, 91, 219, 0.1);
             border-color: #3b5bdb;
         }
+
         [data-theme="light"] .visitor-num {
             color: #3b5bdb;
         }
@@ -284,6 +351,7 @@
             background: rgba(59, 91, 219, 0.06);
             border-color: rgba(59, 91, 219, 0.15);
         }
+
         [data-theme="light"] .theme-btn.active {
             background: #3b5bdb;
             color: #ffffff;
@@ -293,15 +361,18 @@
         [data-theme="light"] .exp-modal-overlay {
             background: rgba(13, 27, 42, 0.55);
         }
+
         [data-theme="light"] .exp-modal-box {
             background: #ffffff;
             border-color: rgba(59, 91, 219, 0.18);
             box-shadow: 0 40px 100px rgba(59, 91, 219, 0.18);
         }
+
         [data-theme="light"] .exp-modal-header {
             background: #f0f4ff;
             border-color: rgba(59, 91, 219, 0.1);
         }
+
         [data-theme="light"] .exp-modal-close {
             background: rgba(59, 91, 219, 0.06);
             border-color: rgba(59, 91, 219, 0.15);
@@ -319,6 +390,7 @@
         [data-theme="light"] .project-link {
             color: #3b5bdb;
         }
+
         [data-theme="light"] .project-link:hover {
             border-color: #3b5bdb;
             filter: none;
@@ -375,6 +447,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -393,6 +466,7 @@
             transform: translate(-50%, -50%);
             transition: width 0.15s, height 0.15s, transform 0.15s;
         }
+
         #ring {
             position: fixed;
             width: 36px;
@@ -461,10 +535,13 @@
         }
 
         @keyframes loaderPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 filter: drop-shadow(0 0 5px var(--accent));
             }
+
             50% {
                 opacity: 0.6;
                 filter: drop-shadow(0 0 15px var(--accent2));
@@ -511,7 +588,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(var(--bg) == #f5f8ff ? 255 : 6, rgba(var(--bg) == #f5f8ff ? 255 : 8), rgba(var(--bg) == #f5f8ff ? 255 : 18), 0.65);
+            background: rgba(var(--bg)==#f5f8ff ? 255 : 6, rgba(var(--bg)==#f5f8ff ? 255 : 8), rgba(var(--bg)==#f5f8ff ? 255 : 18), 0.65);
             background: var(--surface);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -592,9 +669,12 @@
         }
 
         @keyframes pulseDot {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 4px #10b981;
             }
+
             50% {
                 box-shadow: 0 0 12px #10b981, 0 0 20px rgba(16, 185, 129, 0.4);
             }
@@ -611,9 +691,18 @@
         }
 
         @keyframes numPop {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); color: #10b981; }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+                color: #10b981;
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* ─── THEME SWITCHER ─── */
@@ -736,9 +825,17 @@
         }
 
         @keyframes shimmerName {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .hero-sub {
@@ -834,8 +931,15 @@
         }
 
         @keyframes float3D {
-            0%, 100% { transform: translateY(0px) rotateY(-6deg) rotateX(3deg); }
-            50% { transform: translateY(-15px) rotateY(6deg) rotateX(-3deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotateY(-6deg) rotateX(3deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotateY(6deg) rotateX(-3deg);
+            }
         }
 
         .avatar-initials {
@@ -856,8 +960,15 @@
         }
 
         @keyframes avatarPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+            }
         }
 
         .ripple-ring {
@@ -868,13 +979,34 @@
             pointer-events: none;
         }
 
-        .ripple-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
-        .ripple-ring:nth-child(2) { width: 155px; height: 155px; animation-delay: 1.3s; }
-        .ripple-ring:nth-child(3) { width: 190px; height: 190px; animation-delay: 2.6s; }
+        .ripple-ring:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            animation-delay: 0s;
+        }
+
+        .ripple-ring:nth-child(2) {
+            width: 155px;
+            height: 155px;
+            animation-delay: 1.3s;
+        }
+
+        .ripple-ring:nth-child(3) {
+            width: 190px;
+            height: 190px;
+            animation-delay: 2.6s;
+        }
 
         @keyframes rippleExpand {
-            0% { opacity: 0.6; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.4); }
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.4);
+            }
         }
 
         .avatar-name {
@@ -1192,10 +1324,12 @@
             z-index: 2;
             pointer-events: none;
         }
+
         .marquee-wrap::before {
             left: 0;
             background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
         }
+
         .marquee-wrap::after {
             right: 0;
             background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
@@ -1228,8 +1362,13 @@
         }
 
         @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* ─── EDUCATION / TIMELINE ─── */
@@ -1714,13 +1853,34 @@
             animation: contactRipple 5s ease-out infinite;
         }
 
-        .contact-ripple:nth-child(1) { width: 220px; height: 220px; animation-delay: 0s; }
-        .contact-ripple:nth-child(2) { width: 440px; height: 440px; animation-delay: 1.5s; }
-        .contact-ripple:nth-child(3) { width: 660px; height: 660px; animation-delay: 3s; }
+        .contact-ripple:nth-child(1) {
+            width: 220px;
+            height: 220px;
+            animation-delay: 0s;
+        }
+
+        .contact-ripple:nth-child(2) {
+            width: 440px;
+            height: 440px;
+            animation-delay: 1.5s;
+        }
+
+        .contact-ripple:nth-child(3) {
+            width: 660px;
+            height: 660px;
+            animation-delay: 3s;
+        }
 
         @keyframes contactRipple {
-            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.7); }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.4); }
+            0% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(0.7);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1.4);
+            }
         }
 
         .contact-inner {
@@ -1796,9 +1956,17 @@
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .reveal-up { transform: translateY(40px); }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
+        .reveal-up {
+            transform: translateY(40px);
+        }
+
+        .reveal-left {
+            transform: translateX(-40px);
+        }
+
+        .reveal-right {
+            transform: translateX(40px);
+        }
 
         .reveal.visible {
             opacity: 1;
@@ -1812,29 +1980,37 @@
                 gap: 50px;
                 text-align: center;
             }
+
             .hero-tag {
                 justify-content: center;
             }
+
             .hero-tag::before {
                 display: none;
             }
+
             .hero-btns {
                 justify-content: center;
             }
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .skills-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
             nav {
                 top: 12px;
                 padding: 10px 20px;
             }
+
             .nav-links {
-                display: none; /* simple mobile nav override */
+                display: none;
+                /* simple mobile nav override */
             }
         }
 
@@ -1943,9 +2119,22 @@
             gap: 16px;
         }
 
-        .fallback-icon { font-size: 3rem; }
-        .fallback-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
-        .fallback-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .fallback-icon {
+            font-size: 3rem;
+        }
+
+        .fallback-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .fallback-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
         .fallback-btn {
             padding: 12px 28px;
             border-radius: 30px;
@@ -1959,11 +2148,17 @@
             transition: all 0.25s;
             box-shadow: 0 5px 15px var(--glow);
         }
+
         .fallback-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px var(--glow);
         }
-        .fallback-note { font-size: 0.72rem; color: var(--muted); font-family: var(--font-mono); }
+
+        .fallback-note {
+            font-size: 0.72rem;
+            color: var(--muted);
+            font-family: var(--font-mono);
+        }
     </style>
 </head>
 
@@ -1974,7 +2169,7 @@
 
     <!-- Loading Screen -->
     <div id="loader">
-        <div class="loader-text">Loading Portfolio</div>
+        <div class="loader-text">Ch Muzaffar</div>
         <div class="loader-bar-wrap">
             <div class="loader-bar"></div>
         </div>
@@ -1986,17 +2181,16 @@
 
     <!-- Header Navigation -->
     <nav>
-        <a href="#" class="nav-logo">MMR</a>
+        <a href="index.html" class="nav-logo">MMR</a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#designs">Designs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="credentials.html">Credentials</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-right">
+            <a href="other-work.html" class="other-work-nav-link">Other Work</a>
             <!-- Visitor Counter -->
             <div class="visitor-counter" id="visitorCounter">
                 <span class="visitor-dot"></span>
@@ -2027,12 +2221,15 @@
             <div class="container">
                 <div class="hero-inner">
                     <div>
-                        <div class="hero-tag">Welcome to my space</div>
+                        <div class="hero-tag">Data Analyst — Power BI Dashboards, SQL Analysis, Data Automation</div>
                         <h1 class="hero-name">Muhammad Muzaffar Rahman</h1>
-                        <p class="hero-sub">Frontend Developer & Designer specializing in crafting premium web applications, clean user interfaces, and robust signal processing signals.</p>
+                        <p class="hero-sub">I turn raw business data into dashboards and reports that drive decisions.
+                        </p>
                         <div class="hero-btns">
-                            <a href="#contact" class="btn btn-primary">Let's Connect →</a>
-                            <a href="#projects" class="btn btn-ghost">View My Work</a>
+                            <a href="https://www.upwork.com" target="_blank" class="btn btn-primary">Upwork <span
+                                    style="font-size:0.75rem;">↗</span></a>
+                            <a href="https://pk.linkedin.com/in/ch-muzaffar-rahman-8b516a336" target="_blank"
+                                class="btn btn-ghost">LinkedIn</a>
                         </div>
                     </div>
                     <div class="avatar-wrap">
@@ -2045,7 +2242,7 @@
                                 <div class="ripple-ring"></div>
                             </div>
                             <div class="avatar-name">Muzaffar Rahman</div>
-                            <div class="avatar-role">Frontend Developer</div>
+                            <div class="avatar-role">Data Analyst</div>
                         </div>
                     </div>
                 </div>
@@ -2062,8 +2259,13 @@
                 <div class="about-grid">
                     <div class="reveal reveal-left">
                         <div class="about-text">
-                            <p>I am a results-driven Web and App developer dedicated to crafting seamless, performance-optimized applications from front to back. My journey into tech evolved from a curiosity about software architecture into a deep dive into building production-ready apps using modern frameworks like React Native, Node.js, and SQL/NoSQL databases.</p>
-                            <p>I thrive on bridging the gap between clean UI design and powerful backend architecture, whether I am building educational tools, scaling services through my agency, or deploying features in an engineering team.</p>
+                            <p>I am a results-driven Data Analyst dedicated to transforming complex, raw business data
+                                into interactive dashboards and structured reports that drive strategic decisions. My
+                                analytical journey is built on a solid technical foundation in SQL querying, advanced
+                                Power BI modeling, and Python automation.</p>
+                            <p>I thrive on bridging the gap between raw data pipelines and high-impact business
+                                decisions, helping teams eliminate manual spreadsheet overhead and uncover clear
+                                performance trends.</p>
                             <p>Languages I communicate in: English, Urdu, and Punjabi.</p>
                         </div>
                     </div>
@@ -2084,6 +2286,46 @@
                             <span class="stat-num">GCU</span>
                             <span class="stat-label">University, Lahore</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services"
+            style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface2);">
+            <div class="container">
+                <div class="reveal reveal-up">
+                    <div class="section-label">Services</div>
+                    <h2 class="section-title">What I <span>Offer</span></h2>
+                </div>
+                <div class="projects-grid">
+                    <!-- Power BI -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">📊</div>
+                        <div class="project-title">Power BI Dashboard Development</div>
+                        <div class="project-desc">Interactive dashboards that give leadership a single view of sales,
+                            profit, and performance trends.</div>
+                    </div>
+                    <!-- SQL -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">🔍</div>
+                        <div class="project-title">SQL Data Analysis</div>
+                        <div class="project-desc">Query and structure raw data into clear, decision-ready answers.</div>
+                    </div>
+                    <!-- Automation -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">⚙️</div>
+                        <div class="project-title">Data Cleaning & Automation</div>
+                        <div class="project-desc">Remove manual spreadsheet work with repeatable, automated pipelines.
+                        </div>
+                    </div>
+                    <!-- Reporting -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">📋</div>
+                        <div class="project-title">Ad-hoc & Retainer Reporting</div>
+                        <div class="project-desc">Ongoing reporting support for teams that need regular, reliable
+                            numbers.</div>
                     </div>
                 </div>
             </div>
@@ -2167,67 +2409,26 @@
                     <div class="section-label">Skills</div>
                     <h2 class="section-title">What I <span>Do</span></h2>
                 </div>
-                <div class="skills-grid" id="skillsGrid">
+
+                <div class="reveal reveal-up">
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:24px;color:var(--text);">
+                        Primary Data Stack</h3>
+                </div>
+                <div class="skills-grid" id="skillsGrid" style="margin-bottom: 50px;">
                     <div class="reveal reveal-left">
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">HTML / CSS / JavaScript</span>
-                                <span class="skill-pct">85%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">MERN / MEAN Stack</span>
-                                <span class="skill-pct">65%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="65"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Figma Designer</span>
-                                <span class="skill-pct">80%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Canva Design & Editing</span>
+                                <span class="skill-name">SQL</span>
                                 <span class="skill-pct">90%</span>
                             </div>
                             <div class="skill-bar-bg">
                                 <div class="skill-bar-fill" data-width="90"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="reveal reveal-right">
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">GitHub Actions (CI/CD)</span>
-                                <span class="skill-pct">70%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Data Analytics & Power BI</span>
-                                <span class="skill-pct">72%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="72"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Prompt Engineering</span>
+                                <span class="skill-name">Power BI</span>
                                 <span class="skill-pct">88%</span>
                             </div>
                             <div class="skill-bar-bg">
@@ -2236,52 +2437,75 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">AI Tools (GPT, Claude, Gemini)</span>
-                                <span class="skill-pct">92%</span>
+                                <span class="skill-name">DAX</span>
+                                <span class="skill-pct">82%</span>
                             </div>
                             <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-width="92"></div>
+                                <div class="skill-bar-fill" data-width="82"></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="reveal reveal-right">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-pct">80%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Excel</span>
+                                <span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-up">
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:20px;color:var(--text-secondary);">
+                        Secondary Tech & Tools</h3>
+                    <div class="project-tags" style="gap:10px;margin-bottom:20px;">
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">React.js</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">Node.js</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">PostgreSQL</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">Figma</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">GitHub Actions/CI-CD</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">Prompt Engineering</span>
+                        <span class="tag" style="font-size:0.8rem;padding:6px 14px;">AI Tools</span>
                     </div>
                 </div>
 
                 <!-- Marquee Track -->
                 <div class="marquee-wrap reveal reveal-up">
                     <div class="marquee-track" id="marqueeTrack">
-                        <span class="marquee-item">HTML5</span>
-                        <span class="marquee-item">CSS3</span>
-                        <span class="marquee-item">JavaScript</span>
-                        <span class="marquee-item">React.js</span>
-                        <span class="marquee-item">Node.js</span>
-                        <span class="marquee-item">MongoDB</span>
-                        <span class="marquee-item">Figma</span>
-                        <span class="marquee-item">Canva</span>
-                        <span class="marquee-item">GitHub Actions</span>
-                        <span class="marquee-item">CI/CD</span>
-                        <span class="marquee-item">Prompt Engineering</span>
-                        <span class="marquee-item">ChatGPT</span>
-                        <span class="marquee-item">Claude</span>
-                        <span class="marquee-item">Gemini</span>
-                        <span class="marquee-item">Data Visualization</span>
+                        <span class="marquee-item">SQL</span>
                         <span class="marquee-item">Power BI</span>
+                        <span class="marquee-item">DAX</span>
+                        <span class="marquee-item">Python</span>
+                        <span class="marquee-item">Excel</span>
+                        <span class="marquee-item">PostgreSQL</span>
+                        <span class="marquee-item">Figma</span>
+                        <span class="marquee-item">GitHub Actions</span>
+                        <span class="marquee-item">Prompt Engineering</span>
+                        <span class="marquee-item">AI Tools</span>
                         <!-- Duplicate for looping -->
-                        <span class="marquee-item">HTML5</span>
-                        <span class="marquee-item">CSS3</span>
-                        <span class="marquee-item">JavaScript</span>
-                        <span class="marquee-item">React.js</span>
-                        <span class="marquee-item">Node.js</span>
-                        <span class="marquee-item">MongoDB</span>
-                        <span class="marquee-item">Figma</span>
-                        <span class="marquee-item">Canva</span>
-                        <span class="marquee-item">GitHub Actions</span>
-                        <span class="marquee-item">CI/CD</span>
-                        <span class="marquee-item">Prompt Engineering</span>
-                        <span class="marquee-item">ChatGPT</span>
-                        <span class="marquee-item">Claude</span>
-                        <span class="marquee-item">Gemini</span>
-                        <span class="marquee-item">Data Visualization</span>
+                        <span class="marquee-item">SQL</span>
                         <span class="marquee-item">Power BI</span>
+                        <span class="marquee-item">DAX</span>
+                        <span class="marquee-item">Python</span>
+                        <span class="marquee-item">Excel</span>
+                        <span class="marquee-item">PostgreSQL</span>
+                        <span class="marquee-item">Figma</span>
+                        <span class="marquee-item">GitHub Actions</span>
+                        <span class="marquee-item">Prompt Engineering</span>
+                        <span class="marquee-item">AI Tools</span>
                     </div>
                 </div>
             </div>
@@ -2310,179 +2534,272 @@
                         <span class="timeline-score">Currently Enrolled</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 12px var(--accent2)"></div>
+                        <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 12px var(--accent2)">
+                        </div>
                         <div class="timeline-date">2022 – 2024</div>
                         <div class="timeline-title">Intermediate — Science</div>
                         <div class="timeline-sub">Punjab College of Commerce, Bahawalnagar</div>
                         <span class="timeline-score">887 / 1200</span>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot" style="background:var(--accent3);box-shadow:0 0 12px var(--accent3)"></div>
+                        <div class="timeline-dot" style="background:var(--accent3);box-shadow:0 0 12px var(--accent3)">
+                        </div>
                         <div class="timeline-date">2020 – 2022</div>
                         <div class="timeline-title">Matriculation — Science</div>
                         <div class="timeline-sub">Government Model City High School, Bahawalnagar</div>
-                        <span class="timeline-score" style="color:var(--accent3);background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">914 / 1100</span>
+                        <span class="timeline-score"
+                            style="color:var(--accent3);background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">914
+                            / 1100</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
+        <!-- DATA PROJECTS SECTION -->
         <section id="projects">
             <div class="container">
                 <div class="reveal reveal-up">
-                    <div class="section-label">Projects</div>
-                    <h2 class="section-title">Things I've <span>Built</span></h2>
+                    <div class="section-label">Analytics Showcase</div>
+                    <h2 class="section-title">Data <span>Projects</span></h2>
                 </div>
                 <div class="projects-grid">
-                    <!-- Kovo Net -->
-                    <div class="project-card reveal reveal-up"
-                        onclick="window.open('https://kovonetworks.vercel.app/','_blank')">
-                        <div class="project-icon">🌐</div>
-                        <div class="project-title">KOVO NET — Real-Time Professional Network</div>
-                        <div class="project-desc">A high-performance, full-stack professional networking platform. Features sub-second connection page loads via parallel API pre-fetching, real-time messaging powered by WebSockets, and backend caching with Redis. Built with a modular React state architecture to eliminate global re-renders.</div>
+                    <!-- Data Project 1 -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">📊</div>
+                        <div class="project-title">Interactive Sales & Financial Dashboard</div>
+                        <div class="project-desc">A comprehensive Power BI dashboard for retail performance analysis.
+                            Implemented dynamic DAX measures for Year-over-Year growth, profit margin trends, and
+                            product category performance. Designed an intuitive, executive-ready interface to drive
+                            strategic sales decisions.</div>
                         <div class="project-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Supabase</span>
-                            <span class="tag">WebSockets</span>
-                            <span class="tag">Redis</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Data Modelling</span>
+                            <span class="tag">Business Intelligence</span>
                         </div>
-                        <a href="https://github.com/Ch-Muzaffar/Kovo-Net" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                    </div>
+
+                    <!-- Data Project 2 -->
+                    <div class="project-card reveal reveal-up">
+                        <div class="project-icon">🔍</div>
+                        <div class="project-title">Customer Churn & Behavioral SQL Analysis</div>
+                        <div class="project-desc">Deep-dive database query analysis of customer transactional patterns.
+                            Wrote advanced PostgreSQL queries utilizing Common Table Expressions (CTEs) and Window
+                            Functions to segment customers by purchasing frequency and identify key churn indicators.
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW I WORK SECTION -->
+        <section id="how-i-work" style="border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="reveal reveal-up">
+                    <div class="section-label">Process</div>
+                    <h2 class="section-title">How I <span>Work</span></h2>
+                </div>
+                <div class="projects-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+                    <div class="project-card reveal reveal-up" style="padding: 24px;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:12px;">
+                            01</div>
+                        <div class="project-title" style="font-size:1.1rem;margin-bottom:8px;">Understand & Define</div>
+                        <div class="project-desc" style="font-size:0.85rem;margin-bottom:0;line-height:1.6;">Collaborate
+                            with stakeholders to identify key business questions, target metrics, and dashboard
+                            requirements.</div>
+                    </div>
+                    <div class="project-card reveal reveal-up" style="padding: 24px;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--accent2);margin-bottom:12px;">
+                            02</div>
+                        <div class="project-title" style="font-size:1.1rem;margin-bottom:8px;">Clean & Structure</div>
+                        <div class="project-desc" style="font-size:0.85rem;margin-bottom:0;line-height:1.6;">Extract raw
+                            data using SQL/Python, clean anomalies, and structure relational tables for accurate
+                            modelling.</div>
+                    </div>
+                    <div class="project-card reveal reveal-up" style="padding: 24px;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--accent3);margin-bottom:12px;">
+                            03</div>
+                        <div class="project-title" style="font-size:1.1rem;margin-bottom:8px;">Model & Visualize</div>
+                        <div class="project-desc" style="font-size:0.85rem;margin-bottom:0;line-height:1.6;">Write
+                            optimized DAX measures, design intuitive layouts in Power BI, and build interactive report
+                            sheets.</div>
+                    </div>
+                    <div class="project-card reveal reveal-up" style="padding: 24px;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:12px;">
+                            04</div>
+                        <div class="project-title" style="font-size:1.1rem;margin-bottom:8px;">Automate & Deliver</div>
+                        <div class="project-desc" style="font-size:0.85rem;margin-bottom:0;line-height:1.6;">Set up
+                            automated refresh schedules, analyze performance trends, and hand over actionable insights.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OTHER WORK SECTION -->
+        <section id="other-work" style="background: var(--surface); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="reveal reveal-up">
+                    <div class="section-label">Development & Concepts</div>
+                    <h2 class="section-title">Other <span>Work</span></h2>
+                </div>
+                <div class="projects-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+                    <!-- Kovo Net -->
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
+                        onclick="window.open('https://kovonetworks.vercel.app/','_blank')">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">🌐</span>
+                            <a href="https://github.com/Ch-Muzaffar/Kovo-Net" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
+                        </div>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">KOVO NET</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">
+                            Real-Time Professional Network with WebSocket chat and Redis caching.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">React</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">Node</span>
+                        </div>
                     </div>
 
                     <!-- Todo App -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://todo-list-nu-pied.vercel.app/','_blank')">
-                        <div class="project-icon">📝</div>
-                        <div class="project-title">Full-Stack Todo App</div>
-                        <div class="project-desc">A robust Full-Stack Todo application built with Next.js, React, and CSS. Utilizes Neon PostgreSQL for relational database management. A friendly UI and UX with easy to use interface. A fully responsive design for all devices.</div>
-                        <div class="project-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Neon DataBase</span>
-                            <span class="tag">Vercel</span>
-                            <span class="tag">GitHub</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">📝</span>
+                            <a href="https://github.io/Ch-Muzaffar/Todo-List" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://github.io/Ch-Muzaffar/Todo-List" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">Full-Stack Todo App
+                        </div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">Task
+                            management app backed by Neon PostgreSQL relational database.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">Next.js</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">PostgreSQL</span>
+                        </div>
                     </div>
 
                     <!-- Calculator -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://ch-muzaffar.github.io/Calculator/','_blank')">
-                        <div class="project-icon">🧮</div>
-                        <div class="project-title">React Calculator</div>
-                        <div class="project-desc">Built a fully functional calculator using React.js, HTML, and CSS. Implemented a CI/CD pipeline with GitHub Actions to automate testing and deployment on every push. Demonstrates frontend development and DevOps fundamentals in a single project.</div>
-                        <div class="project-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">GitHub Actions</span>
-                            <span class="tag">CI/CD</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">🧮</span>
+                            <a href="https://ch-muzaffar.github.io/Calculator/" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://ch-muzaffar.github.io/Calculator/" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">React Calculator</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">Fully
+                            functional web calculator with automated GitHub Actions CI/CD pipeline.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">React</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">DevOps</span>
+                        </div>
                     </div>
 
                     <!-- NeuraX -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://ch-muzaffar.github.io/NeuraX/','_blank')">
-                        <div class="project-icon">🧠</div>
-                        <div class="project-title">NeuraX — Designed for Paralyzed Individuals</div>
-                        <div class="project-desc">Conceptualized and designed NeuraX, a Brain-Computer Interface system that enables paralyzed individuals to control devices through thought. The system architecture combines Python and C++ for signal processing and hardware control, a SQL database for data management, and an HTML/CSS/JS frontend for the UI.</div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">HTML</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">BCI System Design</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">🧠</span>
+                            <a href="https://ch-muzaffar.github.io/NeuraX/" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://ch-muzaffar.github.io/NeuraX/" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
-                    </div>
-
-                    <!-- Portfolio -->
-                    <div class="project-card reveal reveal-up"
-                        onclick="window.open('https://chmuzaffar.vercel.app/','_blank')">
-                        <div class="project-icon">💼</div>
-                        <div class="project-title">Personal Portfolio Website</div>
-                        <div class="project-desc">Designed and built a personal portfolio website from scratch using HTML, CSS, and JavaScript. Showcases my projects, skills, and design work in one place. Built with a focus on clean UI, responsive layout, and fast load time — no frameworks, pure frontend code.</div>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">NeuraX</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">BCI
+                            system design to control hardware devices via Python/C++ signal processing.</div>
                         <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Artificial Intelligence</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">Python</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">C++</span>
                         </div>
-                        <a href="https://chmuzaffar.vercel.app/" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
                     </div>
 
                     <!-- CI/CD -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://github.com/Ch-Muzaffar','_blank')">
-                        <div class="project-icon">🤖</div>
-                        <div class="project-title">CI/CD Automation with GitHub Actions</div>
-                        <div class="project-desc">Set up and managed CI/CD pipelines using GitHub Actions across multiple projects including a React calculator, full-stack todo app, and personal portfolio. Configured automated workflows that trigger on every push to main — running build steps and deploying live to GitHub Pages.</div>
-                        <div class="project-tags">
-                            <span class="tag">GitHub Actions</span>
-                            <span class="tag">CI/CD</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">WorkFlow Configuration</span>
-                            <span class="tag">GitHub Pages</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">🤖</span>
+                            <a href="https://github.com/Ch-Muzaffar" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://github.com/Ch-Muzaffar" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">CI/CD Automation</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">
+                            Automation workflows using GitHub Actions for build, test, and deployment.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">GitHub Actions</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">CI/CD</span>
+                        </div>
                     </div>
 
                     <!-- GCU Portal -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://ch-muzaffar.github.io/Demo/','_blank')">
-                        <div class="project-icon">🧮</div>
-                        <div class="project-title">GCU Repeat Course Portal</div>
-                        <div class="project-desc">A high-fidelity, interactive SaaS prototype built to digitize the manual, paper-based summer repeat course enrollment process at Government College University (GCU) Lahore. It unifies three custom roles—Student, Exam Cell Staff, and Super Admin—into a single-page web environment.</div>
-                        <div class="project-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">Vite</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">GitHub Pages</span>
-                            <span class="tag">CI/CD</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">🏫</span>
+                            <a href="https://ch-muzaffar.github.io/Demo/" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://ch-muzaffar.github.io/Demo/" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">GCU Repeat Portal</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">
+                            Interactive SaaS prototype built to digitize GCU summer repeat enrollments.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">React</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">Tailwind</span>
+                        </div>
                     </div>
 
                     <!-- Text Editor -->
-                    <div class="project-card reveal reveal-up"
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
                         onclick="window.open('https://ch-muzaffar.github.io/Text-Editor/','_blank')">
-                        <div class="project-icon">📝</div>
-                        <div class="project-title">Undo/Redo Text Editor</div>
-                        <div class="project-desc">Built a browser-based text editor implementing undo and redo functionality using the Stack data structure from scratch. Every user action is tracked and pushed onto a stack — undo pops the last action, redo re-applies it. Built entirely with HTML, CSS, and JS.</div>
-                        <div class="project-tags">
-                            <span class="tag">DSA</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">Stacks</span>
-                            <span class="tag">Algorithms</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML</span>
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">📝</span>
+                            <a href="https://ch-muzaffar.github.io/Text-Editor/" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Code →</a>
                         </div>
-                        <a href="https://ch-muzaffar.github.io/Text-Editor/" target="_blank" class="project-link"
-                            onclick="event.stopPropagation()">View Project →</a>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">Undo/Redo Editor</div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">
+                            Browser-based editor implementing custom Stack-based undo/redo logic.</div>
+                        <div class="project-tags">
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">JS</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">DSA</span>
+                        </div>
                     </div>
 
-                    <!-- Coming Soon -->
-                    <div class="project-card reveal reveal-up"
-                        onclick="window.open('https://github.com/Ch-Muzaffar/','_blank')">
-                        <div class="project-icon">🕜</div>
-                        <div class="project-title">Coming Soon</div>
-                        <div class="project-desc">The learning never stops. I'm currently working on fresh projects designed to solve real-world problems, focus on high performance, and leverage modern tech stacks. Exploring advanced state management, cloud integrations, and seamless UX/UI.</div>
+                    <!-- Personal Portfolio -->
+                    <div class="project-card reveal reveal-up" style="padding: 24px; min-height: unset;"
+                        onclick="window.open('https://chmuzaffar.vercel.app/','_blank')">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <span style="font-size:1.5rem;">💼</span>
+                            <a href="https://chmuzaffar.vercel.app/" target="_blank" class="project-link"
+                                style="margin-top:0;" onclick="event.stopPropagation()">Link →</a>
+                        </div>
+                        <div class="project-title" style="font-size:1.1rem; margin-bottom:8px;">Old Personal Portfolio
+                        </div>
+                        <div class="project-desc" style="font-size:0.82rem; line-height:1.5; margin-bottom:16px;">
+                            Previous portfolio website created using vanilla HTML, CSS, and JS.</div>
                         <div class="project-tags">
-                            <span class="tag">Full-Stack</span>
-                            <span class="tag">System Design</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Next.js</span>
-                            <span class="tag">APIs</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">HTML</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">CSS</span>
+                            <span class="tag" style="font-size:0.6rem; padding:2px 8px;">Vanilla JS</span>
                         </div>
                     </div>
                 </div>
@@ -2497,31 +2814,7 @@
                     <h2 class="section-title">My <span>Credentials</span></h2>
                 </div>
                 <div class="cert-grid">
-                    <!-- Resume -->
-                    <div class="cert-card reveal reveal-up">
-                        <div class="cert-badge">📝</div>
-                        <div class="cert-title">My Resume</div>
-                        <div class="cert-issuer">Updated: May 2026</div>
-                        <div class="cert-date">May 2026</div>
-                        <div class="cert-footer">
-                            <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('My Resume','Documents/CV.pdf')">View →</button>
-                        </div>
-                    </div>
-
-                    <!-- Generative AI -->
-                    <div class="cert-card reveal reveal-up">
-                        <div class="cert-badge">🤖</div>
-                        <div class="cert-title">Generative AI</div>
-                        <div class="cert-issuer">Aspire Nation</div>
-                        <div class="cert-date">December 2025</div>
-                        <div class="cert-footer">
-                            <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('Generative AI — Aspire Nation','Documents/AI.pdf')">View →</button>
-                        </div>
-                    </div>
-
-                    <!-- Data Analytics -->
+                    <!-- Deloitte DA -->
                     <div class="cert-card reveal reveal-up">
                         <div class="cert-badge">📊</div>
                         <div class="cert-title">Data Analytics Job Simulation</div>
@@ -2529,19 +2822,9 @@
                         <div class="cert-date">June 2026</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('Data Analytics Job Simulation — Deloitte','Documents/DA-A.pdf')">View →</button>
-                        </div>
-                    </div>
-
-                    <!-- GenAI BCG X -->
-                    <div class="cert-card reveal reveal-up">
-                        <div class="cert-badge">🤖</div>
-                        <div class="cert-title">GenAI Job Simulation</div>
-                        <div class="cert-issuer">BCG X</div>
-                        <div class="cert-date">June 2026</div>
-                        <div class="cert-footer">
-                            <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('GenAI Job Simulation — BCG X','Documents/GENAI.pdf')">View →</button>
+                            <button class="cert-link"
+                                onclick="openExpModal('Data Analytics Job Simulation — Deloitte','Documents/DA-A.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
@@ -2553,11 +2836,41 @@
                         <div class="cert-date">June 2026</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('AI Powered Data Analytics — Tata Strive','Documents/TATA DA-A.pdf')">View →</button>
+                            <button class="cert-link"
+                                onclick="openExpModal('AI Powered Data Analytics — Tata Strive','Documents/TATA DA-A.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
-                    <!-- Anthropic -->
+                    <!-- GenAI BCG X -->
+                    <div class="cert-card reveal reveal-up">
+                        <div class="cert-badge">🤖</div>
+                        <div class="cert-title">GenAI Job Simulation</div>
+                        <div class="cert-issuer">BCG X</div>
+                        <div class="cert-date">June 2026</div>
+                        <div class="cert-footer">
+                            <span class="cert-status">✓ Verified</span>
+                            <button class="cert-link"
+                                onclick="openExpModal('GenAI Job Simulation — BCG X','Documents/GENAI.pdf')">View
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Generative AI -->
+                    <div class="cert-card reveal reveal-up">
+                        <div class="cert-badge">🤖</div>
+                        <div class="cert-title">Generative AI</div>
+                        <div class="cert-issuer">Aspire Nation</div>
+                        <div class="cert-date">December 2025</div>
+                        <div class="cert-footer">
+                            <span class="cert-status">✓ Verified</span>
+                            <button class="cert-link"
+                                onclick="openExpModal('Generative AI — Aspire Nation','Documents/AI.pdf')">View
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Anthropic AI Fluency -->
                     <div class="cert-card reveal reveal-up">
                         <div class="cert-badge">🧠</div>
                         <div class="cert-title">AI Fluency for Students</div>
@@ -2565,7 +2878,9 @@
                         <div class="cert-date">June 2026</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('AI Fluency — Anthropic','Documents/Anthropic AI Fluency.pdf')">View →</button>
+                            <button class="cert-link"
+                                onclick="openExpModal('AI Fluency — Anthropic','Documents/Anthropic AI Fluency.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
@@ -2577,14 +2892,30 @@
                         <div class="cert-date">2025</div>
                         <div class="cert-footer">
                             <span class="cert-status">✓ Verified</span>
-                            <button class="cert-link" onclick="openExpModal('Claude Code Certificate — Anthropic','Documents/claude code cert..pdf')">View →</button>
+                            <button class="cert-link"
+                                onclick="openExpModal('Claude Code Certificate — Anthropic','Documents/claude code cert..pdf')">View
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Resume -->
+                    <div class="cert-card reveal reveal-up">
+                        <div class="cert-badge">📝</div>
+                        <div class="cert-title">My Resume</div>
+                        <div class="cert-issuer">Updated: May 2026</div>
+                        <div class="cert-date">May 2026</div>
+                        <div class="cert-footer">
+                            <span class="cert-status">✓ Verified</span>
+                            <button class="cert-link" onclick="openExpModal('My Resume','Documents/CV.pdf')">View
+                                →</button>
                         </div>
                     </div>
 
                     <!-- Placeholder -->
                     <div class="cert-card cert-placeholder reveal reveal-up">
                         <div class="cert-placeholder-icon">＋</div>
-                        <div class="cert-placeholder-text">I am confident that I would be an asset to your team and I am eager to contribute to your success.</div>
+                        <div class="cert-placeholder-text">I am confident that I would be an asset to your team and I am
+                            eager to contribute to your success.</div>
                     </div>
                 </div>
             </div>
@@ -2609,7 +2940,9 @@
                         </div>
                         <div class="design-info">
                             <div class="design-title">UI Design for Bestaxca.com</div>
-                            <div class="design-desc">Designed a comprehensive Figma layout for Bestaxca.com, a professional tax consulting company. Focused on clean typography, intuitive user flows, and a highly trustworthy aesthetic suited for financial services.</div>
+                            <div class="design-desc">Designed a comprehensive Figma layout for Bestaxca.com, a
+                                professional tax consulting company. Focused on clean typography, intuitive user flows,
+                                and a highly trustworthy aesthetic suited for financial services.</div>
                             <div class="design-tags">
                                 <span class="tag">Figma</span>
                                 <span class="tag">Web Design</span>
@@ -2630,7 +2963,8 @@
                         </div>
                         <div class="design-info">
                             <div class="design-title">UI Design for Traffic Mobile App</div>
-                            <div class="design-desc">A personal project of Traffic Mobile App UI Design. Currently Live in Play Store with my custom designed interface.</div>
+                            <div class="design-desc">A personal project of Traffic Mobile App UI Design. Currently Live
+                                in Play Store with my custom designed interface.</div>
                             <div class="design-tags">
                                 <span class="tag">Canva</span>
                                 <span class="tag">Branding</span>
@@ -2651,7 +2985,8 @@
                         </div>
                         <div class="design-info">
                             <div class="design-title">Armani Legacy Redesign</div>
-                            <div class="design-desc">A personal project of Landing Page UI Design to test and enhance my UI design skills, inspired with the legacy of Giorgio Armani.</div>
+                            <div class="design-desc">A personal project of Landing Page UI Design to test and enhance my
+                                UI design skills, inspired with the legacy of Giorgio Armani.</div>
                             <div class="design-tags">
                                 <span class="tag">Figma</span>
                                 <span class="tag">Premium</span>
@@ -2672,7 +3007,8 @@
                         </div>
                         <div class="design-info">
                             <div class="design-title">GCU Lahore (Re-Designed)</div>
-                            <div class="design-desc">A personal project of Government College University Lahore Website UI Design to test and enhance my UI Skills.</div>
+                            <div class="design-desc">A personal project of Government College University Lahore Website
+                                UI Design to test and enhance my UI Skills.</div>
                             <div class="design-tags">
                                 <span class="tag">Figma</span>
                                 <span class="tag">Premium</span>
@@ -2693,7 +3029,8 @@
                         </div>
                         <div class="design-info">
                             <div class="design-title" style="color:var(--muted)">More Coming Soon</div>
-                            <div class="design-desc">I am currently working on some exciting new design projects that I can't wait to share with you all. Stay tuned for updates!</div>
+                            <div class="design-desc">I am currently working on some exciting new design projects that I
+                                can't wait to share with you all. Stay tuned for updates!</div>
                         </div>
                     </div>
                 </div>
@@ -2711,7 +3048,10 @@
                 <div class="contact-inner reveal reveal-up">
                     <div class="section-label">Contact</div>
                     <h2 class="section-title">Let's <span>Connect</span></h2>
-                    <p style="color:var(--text-secondary);max-width:480px;margin:0 auto;line-height:1.8;margin-bottom:12px;">Open to internship opportunities, collaboration, and freelance projects. Drop me an email or connect on LinkedIn.</p>
+                    <p
+                        style="color:var(--text-secondary);max-width:480px;margin:0 auto;line-height:1.8;margin-bottom:12px;">
+                        Open to internship opportunities, collaboration, and freelance projects. Drop me an email or
+                        connect on LinkedIn.</p>
                     <a href="mailto:chmuzaffarrahman@gmail.com" class="contact-email">chmuzaffarrahman@gmail.com</a>
                     <div class="contact-links">
                         <a href="https://pk.linkedin.com/in/ch-muzaffar-rahman-8b516a336" target="_blank"
@@ -2725,7 +3065,8 @@
     </main>
 
     <footer>
-        &copy; 2026 Muhammad Muzaffar Rahman - All rights reserved.
+        &copy; 2026 Muhammad Muzaffar Rahman - All rights reserved. | <a href="other-work.html"
+            style="color:var(--accent);text-decoration:none;margin-left:10px;">Other Work</a>
     </footer>
 
     <!-- Credentials Modal -->
@@ -2735,7 +3076,8 @@
                 <div class="exp-modal-title" id="expModalTitle">Document</div>
                 <div style="display:flex;align-items:center;gap:15px;flex-shrink:0;">
                     <a id="expModalFallback" href="" target="_blank"
-                        style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);text-decoration:none;letter-spacing:0.05em;transition:opacity 0.2s;white-space:nowrap;">Open &#x2197;</a>
+                        style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);text-decoration:none;letter-spacing:0.05em;transition:opacity 0.2s;white-space:nowrap;">Open
+                        &#x2197;</a>
                     <button class="exp-modal-close" onclick="closeExpModal()" aria-label="Close">&#x2715;</button>
                 </div>
             </div>
@@ -2747,7 +3089,8 @@
                 <div class="exp-modal-mobile-fallback" id="expModalMobileFallback">
                     <div class="fallback-icon">📄</div>
                     <div class="fallback-title" id="expModalMobileDocName">Document</div>
-                    <div class="fallback-desc">PDF preview is not supported on mobile browsers.<br>Tap the button below to open it directly.</div>
+                    <div class="fallback-desc">PDF preview is not supported on mobile browsers.<br>Tap the button below
+                        to open it directly.</div>
                     <a class="fallback-btn" id="expModalMobileBtn" href="" target="_blank" rel="noopener">
                         &#x2197;&nbsp; Open Document
                     </a>
