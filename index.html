@@ -2591,38 +2591,55 @@
                     <h2 class="section-title">Data <span>Projects</span></h2>
                 </div>
                 <div class="projects-grid">
-                    <!-- Data Project 1 -->
+                    <!-- Real Project 1: Questionnaire Dashboard -->
                     <div class="project-card reveal reveal-up">
-                        <div class="project-icon">📊</div>
-                        <div class="project-title">Interactive Sales & Financial Dashboard</div>
-                        <div class="project-desc">A comprehensive Power BI dashboard for retail performance analysis.
-                            Implemented dynamic DAX measures for Year-over-Year growth, profit margin trends, and
-                            product category performance. Designed an intuitive, executive-ready interface to drive
-                            strategic sales decisions.</div>
+                        <div class="project-icon">📋</div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;">
+                            <div class="project-title" style="margin-bottom:0;">Customer Questionnaire Analysis Dashboard</div>
+                            <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent);background:rgba(0,245,255,0.08);border:1px solid var(--border);border-radius:20px;padding:3px 10px;white-space:nowrap;flex-shrink:0;">Live Dashboard</span>
+                        </div>
+                        <div class="project-desc">Built from a raw <strong>166,000-row CSV dataset</strong>. Applied full Power Query data cleaning — removed nulls, standardised response categories, and reshaped survey data into an analysis-ready star schema. Wrote custom DAX measures to calculate response rate %, sentiment breakdowns, and segment-level KPIs across demographic splits. The final report gives decision-makers a single interactive view of survey insights with drill-through capability.</div>
                         <div class="project-tags">
                             <span class="tag">Power BI</span>
                             <span class="tag">DAX</span>
-                            <span class="tag">Data Modelling</span>
-                            <span class="tag">Business Intelligence</span>
+                            <span class="tag">Power Query</span>
+                            <span class="tag">Data Cleaning</span>
+                            <span class="tag">166K Rows</span>
+                            <span class="tag">Survey Analytics</span>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <button class="exp-btn" style="display:inline-flex;align-items:center;gap:6px;"
+                                onclick="openExpModal('Customer Questionnaire Analysis Dashboard — Power BI','Documents/Questionnaire.pdf')">
+                                👁 View Dashboard
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Data Project 2 -->
+                    <!-- Real Project 2: Revenue of 5 Countries -->
                     <div class="project-card reveal reveal-up">
-                        <div class="project-icon">🔍</div>
-                        <div class="project-title">Customer Churn & Behavioral SQL Analysis</div>
-                        <div class="project-desc">Deep-dive database query analysis of customer transactional patterns.
-                            Wrote advanced PostgreSQL queries utilizing Common Table Expressions (CTEs) and Window
-                            Functions to segment customers by purchasing frequency and identify key churn indicators.
+                        <div class="project-icon">🌍</div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;">
+                            <div class="project-title" style="margin-bottom:0;">Revenue of 5 Countries — Sales Intelligence Report</div>
+                            <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent);background:rgba(0,245,255,0.08);border:1px solid var(--border);border-radius:20px;padding:3px 10px;white-space:nowrap;flex-shrink:0;">Live Dashboard</span>
                         </div>
+                        <div class="project-desc">Sourced from the same <strong>166,000-row transactional CSV</strong>. Performed end-to-end data preparation in Power Query: parsed multi-currency revenue columns, resolved country-code inconsistencies, and built a clean date table for time intelligence. Created DAX measures for Total Revenue, MoM Growth %, Country-vs-Average variance, and YTD vs Prior Year comparisons. Enables side-by-side revenue benchmarking across 5 countries with map visuals and dynamic slicers.</div>
                         <div class="project-tags">
-                            <span class="tag">SQL</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Power Query</span>
+                            <span class="tag">Time Intelligence</span>
+                            <span class="tag">Multi-Country</span>
+                            <span class="tag">Revenue Analysis</span>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <button class="exp-btn" style="display:inline-flex;align-items:center;gap:6px;"
+                                onclick="openExpModal('Revenue of 5 Countries — Sales Intelligence Report','Documents/Revenue of 5 countries.pdf')">
+                                👁 View Dashboard
+                            </button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
