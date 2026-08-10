@@ -1,0 +1,11 @@
+# robots.txt for Muhammad Muzaffar Rahman (Ch Muzaffar) Portfolio
+# https://chmuzaffar.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Exclude private/document files from direct indexing
+Disallow: /Documents/
+
+# Sitemap location
+Sitemap: https://chmuzaffar.vercel.app/sitemap.xml
