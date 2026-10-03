@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('mmr-theme');
+    if(!t){ t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Power BI Case Studies &amp; Dev Work | Ch Muzaffar (Muhammad Muzaffar Rahman)</title>
+<meta name="description" content="Data analysis case studies, development projects, and UI/UX design work by Muhammad Muzaffar Rahman (Ch Muzaffar) — Power BI, SQL, DAX and more.">
+<meta name="author" content="Muhammad Muzaffar Rahman">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://chmuzaffar.vercel.app/projects.html">
+<meta property="og:title" content="Projects — Power BI Case Studies & Dev Work | Ch Muzaffar">
+<meta property="og:description" content="Data analysis case studies, development projects, and UI/UX design work by Muhammad Muzaffar Rahman.">
+<meta property="og:image" content="https://chmuzaffar.vercel.app/images/og_preview.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chmuzaffar.vercel.app/projects.html">
+<meta property="og:site_name" content="Muhammad Muzaffar Rahman | Ch Muzaffar">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects — Power BI Case Studies & Dev Work | Ch Muzaffar">
+<meta name="twitter:description" content="Data analysis case studies, development projects, and UI/UX design work by Muhammad Muzaffar Rahman.">
+<meta name="twitter:image" content="https://chmuzaffar.vercel.app/images/og_preview.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://chmuzaffar.vercel.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://chmuzaffar.vercel.app/projects.html" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="bg-field"></div>
+<div class="grain"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">M</span>Ch Muzaffar</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="credentials.html">Credentials</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="container" style="padding: 40px 0 20px;">
+    <p class="hero-eyebrow reveal in">Projects</p>
+    <h1 class="reveal in" style="font-size: clamp(2.2rem, 4vw, 3.1rem); max-width: 720px;">Data work first. Everything else as proof of range.</h1>
+    <p class="lead reveal in" style="max-width: 560px;">Two full case studies from a 166,000-row dataset, six development builds, and four UI/UX design projects.</p>
+  </section>
+
+  <section class="container section">
+
+    <div class="tier-head reveal">
+      <h2>Data Analysis</h2>
+      <span class="tier-note">Full case studies</span>
+    </div>
+
+    <article class="case-study glass reveal">
+      <div class="case-study-top">
+        <div>
+          <span class="case-study-badge">Live Dashboard</span>
+          <h3>Customer Questionnaire Analysis Dashboard</h3>
+          <p class="summary">A raw 166,000-row survey dataset, cleaned and reshaped into an analysis-ready star schema, with DAX measures for response rate, sentiment, and segment-level KPIs.</p>
+        </div>
+        <span class="expand-hint">Click to expand ↓</span>
+      </div>
+      <div class="case-study-tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span>
+        <span class="tag">Data Cleaning</span><span class="tag">166K Rows</span><span class="tag">Survey Analytics</span>
+      </div>
+      <div class="case-study-body">
+        <div class="case-study-body-inner">
+          <div>
+            <h4>Problem</h4>
+            <p>A 166,000-row raw customer questionnaire CSV with no structure — nulls, inconsistent response categories, and no way for stakeholders to see patterns without manual filtering.</p>
+          </div>
+          <div>
+            <h4>Approach</h4>
+            <p>Applied full Power Query cleaning — removed nulls, standardised response categories, and reshaped the survey data into a star schema. Wrote custom DAX measures for response rate %, sentiment breakdowns, and segment-level KPIs across demographic splits.</p>
+          </div>
+          <div>
+            <h4>Outcome</h4>
+            <p>A single interactive report with drill-through capability, giving decision-makers one place to explore survey insights by segment instead of a static spreadsheet summary.</p>
+          </div>
+        </div>
+        <div class="case-study-link">
+          <a href="https://chmuzaffar.vercel.app/Documents/Questionnaire.pdf" target="_blank" rel="noopener" class="btn btn-ghost">View report PDF</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-study glass reveal">
+      <div class="case-study-top">
+        <div>
+          <span class="case-study-badge">Live Dashboard</span>
+          <h3>Revenue of 5 Countries — Sales Intelligence Report</h3>
+          <p class="summary">Sourced from the same 166,000-row transactional dataset — a clean, benchmarkable view of revenue across five countries with time intelligence built in.</p>
+        </div>
+        <span class="expand-hint">Click to expand ↓</span>
+      </div>
+      <div class="case-study-tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span>
+        <span class="tag">Time Intelligence</span><span class="tag">Multi-Country</span><span class="tag">Revenue Analysis</span>
+      </div>
+      <div class="case-study-body">
+        <div class="case-study-body-inner">
+          <div>
+            <h4>Problem</h4>
+            <p>Multi-currency revenue figures and inconsistent country codes across a large transactional dataset made it impossible to compare performance across markets side by side.</p>
+          </div>
+          <div>
+            <h4>Approach</h4>
+            <p>Parsed multi-currency revenue columns and resolved country-code inconsistencies in Power Query, then built a clean date table for time intelligence. Created DAX measures for Total Revenue, MoM Growth %, Country-vs-Average variance, and YTD vs Prior Year comparisons.</p>
+          </div>
+          <div>
+            <h4>Outcome</h4>
+            <p>A report enabling side-by-side revenue benchmarking across 5 countries, with map visuals and dynamic slicers for leadership to explore trends without waiting on a new export.</p>
+          </div>
+        </div>
+        <div class="case-study-link">
+          <a href="https://chmuzaffar.vercel.app/Documents/Revenue%20of%205%20countries.pdf" target="_blank" rel="noopener" class="btn btn-ghost">View report PDF</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="tier-head reveal">
+      <h2>Development</h2>
+      <span class="tier-note">Secondary — proof of range</span>
+    </div>
+
+    <div class="dev-grid">
+      <div class="dev-card glass reveal">
+        <h4>KOVO NET</h4>
+        <p>Real-time professional network with WebSocket chat and Redis caching.</p>
+        <div class="tools-tags"><span class="tag">React</span><span class="tag">Node</span></div>
+        <div class="dev-links">
+          <a href="https://kovonetworks.vercel.app/" target="_blank" rel="noopener">Live</a>
+          <a href="https://github.com/Ch-Muzaffar/Kovo-Net" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="dev-card glass reveal">
+        <h4>Full-Stack Todo App</h4>
+        <p>Task management app backed by a Neon PostgreSQL relational database.</p>
+        <div class="tools-tags"><span class="tag">Next.js</span><span class="tag">PostgreSQL</span></div>
+        <div class="dev-links">
+          <a href="https://todo-list-nu-pied.vercel.app/" target="_blank" rel="noopener">Live</a>
+        </div>
+      </div>
+      <div class="dev-card glass reveal">
+        <h4>React Calculator</h4>
+        <p>Fully functional web calculator with an automated GitHub Actions CI/CD pipeline.</p>
+        <div class="tools-tags"><span class="tag">React</span><span class="tag">DevOps</span></div>
+        <div class="dev-links">
+          <a href="https://ch-muzaffar.github.io/Calculator/" target="_blank" rel="noopener">Live</a>
+          <a href="https://ch-muzaffar.github.io/Calculator/" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="dev-card glass reveal">
+        <h4>NeuraX</h4>
+        <p>BCI system design to control hardware devices via Python/C++ signal processing.</p>
+        <div class="tools-tags"><span class="tag">Python</span><span class="tag">C++</span></div>
+        <div class="dev-links">
+          <a href="https://ch-muzaffar.github.io/NeuraX/" target="_blank" rel="noopener">Live</a>
+          <a href="https://ch-muzaffar.github.io/NeuraX/" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="dev-card glass reveal">
+        <h4>GCU Repeat Portal</h4>
+        <p>Interactive SaaS prototype built to digitize GCU summer repeat enrollments.</p>
+        <div class="tools-tags"><span class="tag">React</span><span class="tag">Tailwind</span></div>
+        <div class="dev-links">
+          <a href="https://ch-muzaffar.github.io/Demo/" target="_blank" rel="noopener">Live</a>
+          <a href="https://ch-muzaffar.github.io/Demo/" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="dev-card glass reveal">
+        <h4>Undo/Redo Editor</h4>
+        <p>Browser-based editor implementing custom stack-based undo/redo logic.</p>
+        <div class="tools-tags"><span class="tag">JS</span><span class="tag">DSA</span></div>
+        <div class="dev-links">
+          <a href="https://ch-muzaffar.github.io/Text-Editor/" target="_blank" rel="noopener">Live</a>
+          <a href="https://ch-muzaffar.github.io/Text-Editor/" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier-head reveal">
+      <h2>UI/UX Design</h2>
+      <span class="tier-note">Secondary — proof of range</span>
+    </div>
+
+    <div class="design-gallery">
+      <div class="design-card glass reveal">
+        <img src="https://chmuzaffar.vercel.app/images/design_bestaxca.png" alt="Bestaxca.com Figma design" loading="lazy">
+        <div class="design-card-body">
+          <h4>Bestaxca.com</h4>
+          <p>Figma layout for a professional tax consulting company — clean typography and a trustworthy aesthetic for financial services.</p>
+          <a class="view-link" href="https://skate-buck-74173844.figma.site/" target="_blank" rel="noopener">View design</a>
+        </div>
+      </div>
+      <div class="design-card glass reveal">
+        <img src="https://chmuzaffar.vercel.app/images/design_traffic.png" alt="Traffic mobile app design" loading="lazy">
+        <div class="design-card-body">
+          <h4>Traffic Mobile App</h4>
+          <p>Personal UI design project, live on the Play Store.</p>
+          <a class="view-link" href="https://www.figma.com/design/TwZM1aG8F5vWoclw7O2WWD/Traffic-App-Designs" target="_blank" rel="noopener">View design</a>
+        </div>
+      </div>
+      <div class="design-card glass reveal">
+        <img src="https://chmuzaffar.vercel.app/images/design_armani.png" alt="Armani Legacy redesign" loading="lazy">
+        <div class="design-card-body">
+          <h4>Armani Legacy Redesign</h4>
+          <p>Landing page UI inspired by Giorgio Armani — a premium, luxury aesthetic.</p>
+          <a class="view-link" href="https://www.figma.com/proto/2POLRCNkxgFB93x71QqoJo/Armani" target="_blank" rel="noopener">View design</a>
+        </div>
+      </div>
+      <div class="design-card glass reveal">
+        <img src="https://chmuzaffar.vercel.app/images/design_gcu.png" alt="GCU Lahore redesign" loading="lazy">
+        <div class="design-card-body">
+          <h4>GCU Lahore (Re-Designed)</h4>
+          <p>Government College University Lahore website redesign.</p>
+          <a class="view-link" href="https://tested-binary-62984134.figma.site/" target="_blank" rel="noopener">View design</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Let's turn your data into a decision.</h3>
+      <p>Muhammad Muzaffar Rahman (Ch Muzaffar) — Power BI Developer &amp; Data Analyst based in Lahore, Pakistan, working with teams anywhere.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="credentials.html">Credentials</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:chmuzaffarrahman@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/ch-muzaffar-rahman" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ch-Muzaffar" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.fiverr.com/ch_muzaffar/build-a-verified-b2b-lead-list-with-decision-maker-emails-for-your-outreach" target="_blank" rel="noopener">Fiverr</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Muhammad Muzaffar Rahman</span>
+    <span>Lahore / Bahawalnagar, Pakistan</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
